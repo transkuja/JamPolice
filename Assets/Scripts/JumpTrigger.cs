@@ -15,6 +15,12 @@ public class JumpTrigger : MonoBehaviour {
 
     private void OnTriggerEnter(Collider other)
     {
+        //if (other.GetComponentInParent<Enemy>() == null)
+        //{
+        //    if (other.GetComponentInParent<Enemy>().sensibleToJump)
+        //        other.GetComponentInParent<Enemy>().Death();
+        //}
+
         //if (other.GetComponentInParent<PlayerController>() == null) // si pas le joueur
         //{
         //    GetComponentInParent<PlayerController>().isJumping = false;

@@ -11,6 +11,8 @@ public class PlayerController : MonoBehaviour {
     [SerializeField] float pietinementThreshold;
     [SerializeField] float jumpForce;
     public bool isJumping = false;
+    public bool isAttacking = false;
+
     public bool controlsLocked = false;
     public GameObject visual;
 
@@ -41,7 +43,9 @@ public class PlayerController : MonoBehaviour {
 
     void MovePlayer()
     {
-        transform.LookAt(transform.position + new Vector3(Input.GetAxisRaw("Horizontal"), 0, Input.GetAxisRaw("Vertical")));
+        transform.LookAt(transform.position 
+            + Vector3.ProjectOnPlane(Camera.main.transform.forward, Vector3.up) * Input.GetAxisRaw("Vertical")
+            + Camera.main.transform.right * Input.GetAxisRaw("Horizontal"));
 
         if (Input.GetAxisRaw("Horizontal") > 0.1f ||
                 Input.GetAxisRaw("Horizontal") < -0.1f ||

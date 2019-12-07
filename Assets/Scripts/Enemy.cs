@@ -4,13 +4,19 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour {
 
-	// Use this for initialization
-	void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
+    public bool sensibleToJump;
+    public bool sensibleToHit;
+    public bool sensibleToProjectile;
+
+    public void Death()
+    {
+        //StartCoroutine(EnemyDeath());
+        gameObject.SetActive(false);
+    }
+
+    //IEnumerator EnemyDeath()
+    //{
+    //    // fx
+    //    // disappear
+    //}
 }

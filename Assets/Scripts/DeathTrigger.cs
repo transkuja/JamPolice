@@ -4,6 +4,41 @@ using UnityEngine;
 
 public class DeathTrigger : MonoBehaviour {
 
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.collider.GetComponent<PlayerController>() != null ||
+            collision.collider.GetComponentInParent<PlayerController>() != null ||
+            collision.collider.GetComponentInChildren<PlayerController>() != null)
+        {
+            if (GetComponent<Enemy>() != null)
+            {
+                PlayerController player = FindObjectOfType<PlayerController>();
+                if (player.isJumping
+                    && Vector3.Dot(collision.contacts[0].normal, Vector3.up) > 0.5f
+                    && GetComponent<Enemy>().sensibleToJump)
+                {
+                    GetComponent<Enemy>().Death();
+                    return;
+                }
+
+                if (player.isAttacking && GetComponent<Enemy>().sensibleToHit)
+                {
+                    GetComponent<Enemy>().Death();
+                    return;
+                }
+
+                if (GameData.hasImmunity)
+                {
+                    GameData.hasImmunity = false;
+                    // TODO remove feedback
+                    return;
+                }
+            }
+
+            StartCoroutine(Death());
+        }
+    }
+
     private void OnTriggerEnter(Collider other)
     {
         if (other.GetComponent<PlayerController>() != null || 
@@ -12,6 +47,19 @@ public class DeathTrigger : MonoBehaviour {
         {
             if (GetComponent<Enemy>() != null)
             {
+                PlayerController player = FindObjectOfType<PlayerController>();
+                if (player.isJumping && GetComponent<Enemy>().sensibleToJump)
+                {
+                    GetComponent<Enemy>().Death();
+                    return;
+                }
+
+                if (player.isAttacking && GetComponent<Enemy>().sensibleToHit)
+                {
+                    GetComponent<Enemy>().Death();
+                    return;
+                }
+
                 if (GameData.hasImmunity)
                 {
                     GameData.hasImmunity = false;
