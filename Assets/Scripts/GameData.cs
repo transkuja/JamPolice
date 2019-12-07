@@ -4,12 +4,12 @@ using UnityEngine;
 
 public class GameData {
     public static bool hasImmunity = false;
-    public static int currentCheckpoint;
+    public static Checkpoint currentCheckpoint;
 
     public static void Reset()
     {
         hasImmunity = false;
-        currentCheckpoint = 0;
+        currentCheckpoint = null;
         // TODO: clear collectibles
     }
 

@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour {
     Rigidbody rb;
@@ -16,6 +17,7 @@ public class PlayerController : MonoBehaviour {
     void Start () {
         rb = GetComponent<Rigidbody>();
         animator = GetComponentInChildren<Animator>();
+        GameData.Reset();
     }
 	
 	void Update () {
@@ -64,10 +66,16 @@ public class PlayerController : MonoBehaviour {
         rb.isKinematic = true;
         rb.useGravity = false;
         yield return new WaitForSeconds(1.0f);
-        // TODO checkpoints
-        visual.SetActive(true);
-        rb.isKinematic = false;
-        rb.useGravity = true;
-
+        if (GameData.currentCheckpoint == null)
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        }
+        else
+        {
+            transform.position = GameData.currentCheckpoint.transform.position;
+            visual.SetActive(true);
+            rb.isKinematic = false;
+            rb.useGravity = true;
+        }
     }
 }
