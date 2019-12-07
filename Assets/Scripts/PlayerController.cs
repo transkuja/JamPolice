@@ -72,7 +72,6 @@ public class PlayerController : MonoBehaviour {
 
     IEnumerator RespawnProcess()
     {
-        visual.SetActive(false);
         rb.isKinematic = true;
         rb.useGravity = false;
         yield return new WaitForSeconds(1.0f);
@@ -94,6 +93,11 @@ public class PlayerController : MonoBehaviour {
     {
         controlsLocked = true;
         GameData.lives--;
-        
+        visual.SetActive(false);
+        ragdollInstance = GameObject.Instantiate(ragdoll);
+        ragdoll.GetComponent<Rigidbody>().AddForce(Vector3.up * 20.0f);
+        Destroy(ragdollInstance, 10.0f);
     }
+
+    GameObject ragdollInstance = null;
 }
