@@ -12,6 +12,7 @@ public class PlayerController : MonoBehaviour {
     [SerializeField] float jumpForce;
     public bool isJumping = false;
     public bool isAttacking = false;
+    public bool isFiring = false;
 
     public bool controlsLocked = false;
     public GameObject visual;
@@ -36,6 +37,11 @@ public class PlayerController : MonoBehaviour {
                 Jump();
                 animator.SetFloat("velocity", rb.velocity.magnitude);
             }
+
+            if (!isFiring)
+            {
+                Taser();
+            }
             MovePlayer();
         }
     }
@@ -53,7 +59,7 @@ public class PlayerController : MonoBehaviour {
 
     void MovePlayer()
     {
-        transform.LookAt(transform.position 
+        transform.GetChild(0).LookAt(transform.GetChild(0).position 
             + Vector3.ProjectOnPlane(Camera.main.transform.forward, Vector3.up) * Input.GetAxisRaw("Vertical")
             + Camera.main.transform.right * Input.GetAxisRaw("Horizontal"));
 
@@ -63,9 +69,9 @@ public class PlayerController : MonoBehaviour {
                 Input.GetAxisRaw("Vertical") < -0.1f)
         {
             if (rb.velocity.magnitude < pietinementThreshold)
-                rb.AddForce(transform.forward * accelerationFactor);
+                rb.AddForce(transform.GetChild(0).forward * accelerationFactor);
             else
-                rb.velocity = transform.forward * maxSpeed;
+                rb.velocity = transform.GetChild(0).forward * maxSpeed;
         }
         rb.velocity = Vector3.ClampMagnitude(rb.velocity, maxSpeed);
     }
@@ -112,4 +118,15 @@ public class PlayerController : MonoBehaviour {
     {
         uiRef.RefreshUI();
     }
+
+    void Taser()
+    {
+        if (Input.GetButtonDown("Fire1"))
+        {
+            controlsLocked = true;
+            animator.SetTrigger("taser");
+            isFiring = true;
+        }
+    }
+
 }

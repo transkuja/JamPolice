@@ -8,4 +8,11 @@ public class AnimationKey : MonoBehaviour {
     {
         GetComponentInChildren<JumpTrigger>().enabled = true;
     }
+
+    void ReleasePlayer()
+    {
+        GetComponentInParent<PlayerController>().isFiring = false;
+        GetComponentInParent<PlayerController>().controlsLocked = false;
+    }
+
 }
