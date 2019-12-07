@@ -57,7 +57,7 @@ GameObject:
   - component: {fileID: 4928901577154128}
   - component: {fileID: 114959551762972196}
   - component: {fileID: 54470841280178996}
-  - component: {fileID: 114331584672631838}
+  - component: {fileID: 114859951644305340}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -277,6 +277,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 68755ae01f17db145aa54c961c99b142, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &114859951644305340
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1429758791966062}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5cc3571c466c24b4388653da3ad90729, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  myCamera: {fileID: 0}
+  LookAtCamera: {fileID: 0}
+  offsetDistanceCamera: 10
+  offsetDistanceLookAt: 5
 --- !u!114 &114959551762972196
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -294,6 +309,8 @@ MonoBehaviour:
   pietinementThreshold: 1
   jumpForce: 0
   isJumping: 0
+  controlsLocked: 0
+  visual: {fileID: 0}
 --- !u!136 &136976541431477316
 CapsuleCollider:
   m_ObjectHideFlags: 1
