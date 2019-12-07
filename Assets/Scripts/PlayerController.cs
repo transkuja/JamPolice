@@ -95,7 +95,8 @@ public class PlayerController : MonoBehaviour {
         GameData.lives--;
         visual.SetActive(false);
         ragdollInstance = GameObject.Instantiate(ragdoll);
-        ragdoll.GetComponent<Rigidbody>().AddForce(Vector3.up * 20.0f);
+        ragdollInstance.transform.position = transform.position;
+        ragdollInstance.GetComponent<Rigidbody>().AddForce(transform.forward * 100.0f, ForceMode.Impulse);
         Destroy(ragdollInstance, 10.0f);
     }
 
