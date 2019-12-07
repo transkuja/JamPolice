@@ -23,11 +23,14 @@ public class PlayerController : MonoBehaviour {
     }
 	
 	void Update () {
-        if (!isJumping && !controlsLocked)
+        if (!controlsLocked)
         {
-            Jump();
+            if (!isJumping)
+            {
+                Jump();
+                animator.SetFloat("velocity", rb.velocity.magnitude);
+            }
             MovePlayer();
-            animator.SetFloat("velocity", rb.velocity.magnitude);
         }
     }
 

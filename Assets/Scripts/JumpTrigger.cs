@@ -17,7 +17,6 @@ public class JumpTrigger : MonoBehaviour {
         {
             if (Physics.Raycast(transform.position, Vector3.down, out hit, raycastSize))
             {
-                Debug.Log(hit.collider.name);
                 GetComponentInParent<PlayerController>().isJumping = false;
                 GetComponentInParent<PlayerController>().animator.SetTrigger("stopjump");
             }
