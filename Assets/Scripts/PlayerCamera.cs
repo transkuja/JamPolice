@@ -6,9 +6,16 @@ using Cinemachine;
 public class PlayerCamera : MonoBehaviour {
 
     [SerializeField]
-    public Cinemachine.CinemachineVirtualCamera myCamera;
+    public CinemachineVirtualCamera myCamera;
 
-    public Transform pts;
+    [SerializeField]
+    public CinemachineDollyCart LookAtCamera;
+
+    [SerializeField]
+    float offsetDistanceCamera;
+
+    [SerializeField]
+    float offsetDistanceLookAt;
 
     private void Start()
     {
@@ -23,7 +30,7 @@ public class PlayerCamera : MonoBehaviour {
     {
         //m_PositionUnits = CinemachinePathBase.PositionUnits.Distance;
 
-        myCamera.GetCinemachineComponent<CinemachineTrackedDolly>().m_PathPosition = transform.position.z-10.0f;
-
+        myCamera.GetCinemachineComponent<CinemachineTrackedDolly>().m_PathPosition = transform.position.z-offsetDistanceCamera;
+        LookAtCamera.m_Position = transform.position.z+offsetDistanceLookAt;
     }
 }
