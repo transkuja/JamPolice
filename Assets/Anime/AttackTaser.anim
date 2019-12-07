@@ -18067,7 +18067,7 @@ AnimationClip:
   m_HasMotionFloatCurves: 0
   m_GenerateMotionCurves: 0
   m_Events:
-  - time: 1.2083334
+  - time: 0.9583333
     functionName: ReleasePlayer
     data: 
     objectReferenceParameter: {fileID: 0}
