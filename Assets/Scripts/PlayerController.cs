@@ -15,6 +15,7 @@ public class PlayerController : MonoBehaviour {
 
     public bool controlsLocked = false;
     public GameObject visual;
+    public GameObject ragdoll;
 
     void Start () {
         rb = GetComponent<Rigidbody>();
@@ -87,5 +88,12 @@ public class PlayerController : MonoBehaviour {
             rb.useGravity = true;
             controlsLocked = false;
         }
+    }
+
+    public void Death()
+    {
+        controlsLocked = true;
+        GameData.lives--;
+        
     }
 }

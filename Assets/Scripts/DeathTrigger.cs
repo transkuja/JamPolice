@@ -77,9 +77,8 @@ public class DeathTrigger : MonoBehaviour {
     {
         // Anim death
         PlayerController player = FindObjectOfType<PlayerController>();
-        player.controlsLocked = true;
-        player.GetComponentInChildren<Animator>().SetTrigger("death");
-        GameData.lives--;
+        player.Death();
+
         yield return new WaitForSeconds(1.0f);
         if (GameData.lives == 0)
         {

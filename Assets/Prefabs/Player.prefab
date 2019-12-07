@@ -984,7 +984,7 @@ Rigidbody:
   m_GameObject: {fileID: 1429758791966062}
   serializedVersion: 2
   m_Mass: 1
-  m_Drag: 0
+  m_Drag: 5
   m_AngularDrag: 0.05
   m_UseGravity: 1
   m_IsKinematic: 0
@@ -1082,7 +1082,8 @@ MonoBehaviour:
   isJumping: 0
   isAttacking: 0
   controlsLocked: 0
-  visual: {fileID: 0}
+  visual: {fileID: 1258710279051244}
+  ragdoll: {fileID: 1921113869653090, guid: ebc5f8a821cef6e42889ae0fc8bfcf05, type: 2}
 --- !u!136 &136870807617701788
 CapsuleCollider:
   m_ObjectHideFlags: 1

@@ -2154,16 +2154,6 @@ Prefab:
       propertyPath: myPath
       value: 
       objectReference: {fileID: 1665602065}
-    - target: {fileID: 114859951644305340, guid: f5a67dbde5b70e9498aaa97b49d9c774,
-        type: 2}
-      propertyPath: LookAtCamera
-      value: 
-      objectReference: {fileID: 636257782}
-    - target: {fileID: 54470841280178996, guid: f5a67dbde5b70e9498aaa97b49d9c774,
-        type: 2}
-      propertyPath: m_Drag
-      value: 5
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f5a67dbde5b70e9498aaa97b49d9c774, type: 2}
   m_IsPrefabAsset: 0
