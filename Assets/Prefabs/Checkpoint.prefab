@@ -20,6 +20,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4393907180069352}
   - component: {fileID: 135191792318316598}
+  - component: {fileID: 114078295846394964}
   m_Layer: 0
   m_Name: Checkpoint
   m_TagString: Untagged
@@ -37,7 +38,6 @@ GameObject:
   - component: {fileID: 4704129981966084}
   - component: {fileID: 33899241710191450}
   - component: {fileID: 23053791731509496}
-  - component: {fileID: 135778623303482178}
   m_Layer: 0
   m_Name: Sphere
   m_TagString: Untagged
@@ -114,6 +114,17 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1974881389166892}
   m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &114078295846394964
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1618818075868052}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 09f36fda0cea0fa44ad6b712b5276e95, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!135 &135191792318316598
 SphereCollider:
   m_ObjectHideFlags: 1
@@ -125,16 +136,4 @@ SphereCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_Radius: 1
-  m_Center: {x: 0, y: 0, z: 0}
---- !u!135 &135778623303482178
-SphereCollider:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1974881389166892}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.5
   m_Center: {x: 0, y: 0, z: 0}

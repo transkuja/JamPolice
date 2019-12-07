@@ -35,6 +35,7 @@ public class PlayerController : MonoBehaviour {
         {
             animator.SetBool("jump", true);
             isJumping = true;
+            rb.AddForce(Vector3.up * 100.0f);
         }
     }
 
@@ -76,6 +77,7 @@ public class PlayerController : MonoBehaviour {
             visual.SetActive(true);
             rb.isKinematic = false;
             rb.useGravity = true;
+            controlsLocked = false;
         }
     }
 }
