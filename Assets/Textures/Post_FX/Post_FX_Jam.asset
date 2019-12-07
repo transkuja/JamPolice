@@ -83,10 +83,10 @@ MonoBehaviour:
     overrideState: 1
     value: 1.4
   focalLength:
-    overrideState: 0
+    overrideState: 1
     value: 50
   kernelSize:
-    overrideState: 0
+    overrideState: 1
     value: 1
 --- !u!114 &114206894165108410
 MonoBehaviour:
@@ -105,7 +105,7 @@ MonoBehaviour:
     value: 1
   intensity:
     overrideState: 1
-    value: 0.1
+    value: 0.2
   threshold:
     overrideState: 1
     value: 0.25
@@ -122,8 +122,8 @@ MonoBehaviour:
     overrideState: 0
     value: 0
   color:
-    overrideState: 0
-    value: {r: 1, g: 1, b: 1, a: 1}
+    overrideState: 1
+    value: {r: 0.53333336, g: 0.7028408, b: 1, a: 1}
   fastMode:
     overrideState: 0
     value: 0
@@ -234,7 +234,7 @@ MonoBehaviour:
     value: 0
   saturation:
     overrideState: 1
-    value: 13
+    value: 12
   brightness:
     overrideState: 0
     value: 0
