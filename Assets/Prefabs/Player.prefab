@@ -119,6 +119,22 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!1 &1206293451682254
+GameObject:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4519872041270550}
+  - component: {fileID: 136940818163905912}
+  m_Layer: 0
+  m_Name: GameObject
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!1 &1258710279051244
 GameObject:
   m_ObjectHideFlags: 0
@@ -128,7 +144,6 @@ GameObject:
   m_Component:
   - component: {fileID: 4116876777893152}
   - component: {fileID: 95647184337585256}
-  - component: {fileID: 136870807617701788}
   - component: {fileID: 114678504713840104}
   m_Layer: 0
   m_Name: CHR_Fox_Cop_MOD (1)
@@ -777,6 +792,19 @@ Transform:
   m_Father: {fileID: 4592096445907450}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &4519872041270550
+Transform:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1206293451682254}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4592096445907450}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4534833337538406
 Transform:
   m_ObjectHideFlags: 1
@@ -833,6 +861,7 @@ Transform:
   - {fileID: 4465876449310570}
   - {fileID: 4485414009943102}
   - {fileID: 4114171610635364}
+  - {fileID: 4519872041270550}
   m_Father: {fileID: 4970682887090098}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -923,8 +952,8 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1429758791966062}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.45, y: -1.34, z: 13.04}
+  m_LocalRotation: {x: -0, y: -1, z: -0, w: 0}
+  m_LocalPosition: {x: -13.610001, y: -5.26, z: 12.33}
   m_LocalScale: {x: 0.75, y: 0.75, z: 0.75}
   m_Children:
   - {fileID: 4116876777893152}
@@ -1058,7 +1087,7 @@ MonoBehaviour:
   myCamera: {fileID: 0}
   myPath: {fileID: 0}
   LookAtCamera: {fileID: 0}
-  offsetDistanceCamera: 0.5
+  offsetDistanceCamera: 0.3
   offsetDistanceLookAt: 0
   waypointA: {x: 0, y: 0, z: 0}
   waypointB: {x: 0, y: 0, z: 0}
@@ -1075,8 +1104,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animator: {fileID: 0}
-  accelerationFactor: 40
-  maxSpeed: 10
+  accelerationFactor: 30
+  maxSpeed: 7
   pietinementThreshold: 2
   jumpForce: 0
   isJumping: 0
@@ -1084,19 +1113,20 @@ MonoBehaviour:
   controlsLocked: 0
   visual: {fileID: 1258710279051244}
   ragdoll: {fileID: 1921113869653090, guid: ebc5f8a821cef6e42889ae0fc8bfcf05, type: 2}
---- !u!136 &136870807617701788
+  uiRef: {fileID: 0}
+--- !u!136 &136940818163905912
 CapsuleCollider:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1258710279051244}
+  m_GameObject: {fileID: 1206293451682254}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
   m_Radius: 0.5
   m_Height: 2
   m_Direction: 1
-  m_Center: {x: 0, y: 0.98, z: 0}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!137 &137448202247602396
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 1
