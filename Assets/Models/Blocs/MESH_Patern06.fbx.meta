@@ -6,6 +6,8 @@ ModelImporter:
     100000: //RootNode
     400000: //RootNode
     2100000: lambert1
+    2100002: MAT_Herbe_sol
+    2100004: MAT_Terre_sol
     2300000: //RootNode
     3300000: //RootNode
     4300000: MESH_Patern06
