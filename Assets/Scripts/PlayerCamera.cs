@@ -38,7 +38,7 @@ public class PlayerCamera : MonoBehaviour {
         UpdateCameraPosition();
     }
 
-    //Appeller ceci dans l'update déplcament du perso
+
     public void UpdateCameraPosition()
     {
         Vector3 normalPath = waypointB - waypointA;

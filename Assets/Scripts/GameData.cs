@@ -5,6 +5,7 @@ using UnityEngine;
 public class GameData {
     public static bool hasImmunity = false;
     public static Checkpoint currentCheckpoint;
+    public static int lives = 3;
 
     public static void Reset()
     {
