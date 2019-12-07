@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Donuts : MonoBehaviour {
-    static int donutscount = 0;
+    public static int donutscount = 0;
 
     private bool collected = false;
     private bool isInit;

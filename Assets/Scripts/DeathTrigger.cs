@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class DeathTrigger : MonoBehaviour {
 
@@ -78,9 +79,20 @@ public class DeathTrigger : MonoBehaviour {
         PlayerController player = FindObjectOfType<PlayerController>();
         player.controlsLocked = true;
         player.GetComponentInChildren<Animator>().SetTrigger("death");
+        GameData.lives--;
         yield return new WaitForSeconds(1.0f);
-        GameData.Respawn();
-        player.Respawn();
+        if (GameData.lives == 0)
+        {
+            GameData.lives = 3;
+            Donuts.donutscount = 0;
+            GameData.currentCheckpoint = null;
+            SceneManager.LoadScene("Menu");
+        }
+        else
+        {
+            GameData.Respawn();
+            player.Respawn();
+        }
         // Fade in/out ?
         // Respawn
     }
