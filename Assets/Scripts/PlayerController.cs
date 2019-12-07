@@ -53,7 +53,7 @@ public class PlayerController : MonoBehaviour {
         rb.velocity = Vector3.ClampMagnitude(rb.velocity, maxSpeed);
     }
 
-    void Respawn()
+    public void Respawn()
     {
         StartCoroutine(RespawnProcess());
     }
