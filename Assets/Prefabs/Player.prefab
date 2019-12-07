@@ -277,6 +277,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 68755ae01f17db145aa54c961c99b142, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  raycastSize: 0
 --- !u!114 &114859951644305340
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -289,9 +290,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   myCamera: {fileID: 0}
+  myPath: {fileID: 0}
   LookAtCamera: {fileID: 0}
-  offsetDistanceCamera: 10
-  offsetDistanceLookAt: 5
+  offsetDistanceCamera: 0.5
+  offsetDistanceLookAt: 0
+  waypointA: {x: 0, y: 0, z: 0}
+  waypointB: {x: 0, y: 0, z: 0}
+  indexPath: 0
 --- !u!114 &114959551762972196
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -304,11 +309,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animator: {fileID: 0}
-  accelerationFactor: 20
-  maxSpeed: 3
+  accelerationFactor: 10
+  maxSpeed: 8
   pietinementThreshold: 1
   jumpForce: 0
   isJumping: 0
+  isAttacking: 0
   controlsLocked: 0
   visual: {fileID: 0}
 --- !u!136 &136976541431477316
