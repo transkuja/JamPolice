@@ -80,10 +80,10 @@ public class DeathTrigger : MonoBehaviour {
         player.Death();
 
         yield return new WaitForSeconds(1.0f);
-        if (GameData.lives == 0)
+        if (GameData.Lives == 0)
         {
-            GameData.lives = 3;
-            Donuts.donutscount = 0;
+            GameData.Lives = 3;
+            GameData.Donutscount = 0;
             GameData.currentCheckpoint = null;
             SceneManager.LoadScene("Menu");
         }

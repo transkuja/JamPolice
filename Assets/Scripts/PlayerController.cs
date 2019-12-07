@@ -16,14 +16,19 @@ public class PlayerController : MonoBehaviour {
     public bool controlsLocked = false;
     public GameObject visual;
     public GameObject ragdoll;
+    public GameUI uiRef;
 
     void Start () {
         rb = GetComponent<Rigidbody>();
         animator = GetComponentInChildren<Animator>();
+        if (uiRef == null)
+            uiRef = FindObjectOfType<GameUI>();
+
         GameData.Reset();
+        RefreshUI();
     }
-	
-	void Update () {
+
+    void Update () {
         if (!controlsLocked)
         {
             if (!isJumping)
@@ -92,7 +97,8 @@ public class PlayerController : MonoBehaviour {
     public void Death()
     {
         controlsLocked = true;
-        GameData.lives--;
+        GameData.Lives--;
+        RefreshUI();
         visual.SetActive(false);
         ragdollInstance = GameObject.Instantiate(ragdoll);
         ragdollInstance.transform.position = transform.position;
@@ -101,4 +107,9 @@ public class PlayerController : MonoBehaviour {
     }
 
     GameObject ragdollInstance = null;
+
+    public void RefreshUI()
+    {
+        uiRef.RefreshUI();
+    }
 }
