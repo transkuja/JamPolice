@@ -4,23 +4,36 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour {
     Rigidbody rb;
+    public Animator animator;
     [SerializeField] float accelerationFactor;
     [SerializeField] float maxSpeed;
     [SerializeField] float pietinementThreshold;
+    [SerializeField] float jumpForce;
+    public bool isJumping = false;
+    public bool controlsLocked = false;
+    public GameObject visual;
 
     void Start () {
         rb = GetComponent<Rigidbody>();
+        animator = GetComponentInChildren<Animator>();
     }
 	
 	void Update () {
-        Jump();
-        MovePlayer();
-
+        if (!isJumping && !controlsLocked)
+        {
+            Jump();
+            MovePlayer();
+            animator.SetFloat("velocity", rb.velocity.magnitude);
+        }
     }
 
     void Jump()
     {
-
+        if (Input.GetButtonDown("Jump"))
+        {
+            animator.SetBool("jump", true);
+            isJumping = true;
+        }
     }
 
     void MovePlayer()
@@ -34,21 +47,27 @@ public class PlayerController : MonoBehaviour {
         {
             if (rb.velocity.magnitude < pietinementThreshold)
                 rb.AddForce(transform.forward * accelerationFactor);
-
             else
                 rb.velocity = transform.forward * maxSpeed;
-
-            //Debug.Log(rb.velocity.magnitude);
-            //if (rb.velocity.magnitude < pietinementThreshold)
-            //{
-            //    Debug.Log("lol");
-            //    rb.AddForce(transform.forward * accelerationFactor);
-            //}
-            //else
-            //{
-            //    rb.velocity = transform.forward * maxSpeed;
-            //}
         }
         rb.velocity = Vector3.ClampMagnitude(rb.velocity, maxSpeed);
+    }
+
+    void Respawn()
+    {
+        StartCoroutine(RespawnProcess());
+    }
+
+    IEnumerator RespawnProcess()
+    {
+        visual.SetActive(false);
+        rb.isKinematic = true;
+        rb.useGravity = false;
+        yield return new WaitForSeconds(1.0f);
+        // TODO checkpoints
+        visual.SetActive(true);
+        rb.isKinematic = false;
+        rb.useGravity = true;
+
     }
 }
