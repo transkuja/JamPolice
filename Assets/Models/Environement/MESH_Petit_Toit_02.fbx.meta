@@ -14,11 +14,11 @@ ModelImporter:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: MAT_Maison_02
-    second: {fileID: 2100000, guid: 628f04bfbf0145b4893c6b8488627456, type: 2}
+    second: {fileID: 2100000, guid: 2e93f8528b6f3054facda09aa082d597, type: 2}
   materials:
     importMaterials: 1
-    materialName: 0
-    materialSearch: 1
+    materialName: 1
+    materialSearch: 2
     materialLocation: 1
   animations:
     legacyGenerateAnimations: 4

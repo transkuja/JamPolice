@@ -14,11 +14,11 @@ ModelImporter:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: MAT_Ville_01
-    second: {fileID: 2100000, guid: c2ca0807f2fb2e848aea4bf0fe5d276d, type: 2}
+    second: {fileID: 2100000, guid: 0c239c271a8042e4fa453e4b520b45bc, type: 2}
   materials:
     importMaterials: 1
-    materialName: 0
-    materialSearch: 1
+    materialName: 1
+    materialSearch: 2
     materialLocation: 1
   animations:
     legacyGenerateAnimations: 4
