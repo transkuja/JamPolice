@@ -1,80 +1,20 @@
 fileFormatVersion: 2
-guid: 41087916c2642874dbaa6dee276da5d6
+guid: d4c68285d0f3df64ca92e8fe2037f8ff
 ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
-    100000: CHR_FOX_COP_MOD
-    100002: //RootNode
-    100004: Ctrl_G_hanche
-    100006: CTRL_General
-    100008: Ctrl_hanche
-    100010: Geo
-    100012: Group_FOX
-    100014: Group_RIG
-    100016: Joint_C1
-    100018: Joint_elbow_L
-    100020: Joint_elbow_R
-    100022: Joint_finger_L
-    100024: Joint_finger_R
-    100026: Joint_foot_L
-    100028: Joint_foot_R
-    100030: Joint_hand_L
-    100032: Joint_hand_R
-    100034: joint_head
-    100036: Joint_hip_L
-    100038: Joint_hip_R
-    100040: Joint_knee_L
-    100042: Joint_knee_R
-    100044: joint_neck
-    100046: Joint_Root
-    100048: Joint_shoulder_L
-    100050: Joint_shoulder_R
-    100052: Joint_tail_01
-    100054: Joint_tail_02
-    100056: Joint_tail_03
-    100058: nullCtrl_G_hanche
-    100060: nullCtrl_hanche
-    400000: CHR_FOX_COP_MOD
-    400002: //RootNode
-    400004: Ctrl_G_hanche
-    400006: CTRL_General
-    400008: Ctrl_hanche
-    400010: Geo
-    400012: Group_FOX
-    400014: Group_RIG
-    400016: Joint_C1
-    400018: Joint_elbow_L
-    400020: Joint_elbow_R
-    400022: Joint_finger_L
-    400024: Joint_finger_R
-    400026: Joint_foot_L
-    400028: Joint_foot_R
-    400030: Joint_hand_L
-    400032: Joint_hand_R
-    400034: joint_head
-    400036: Joint_hip_L
-    400038: Joint_hip_R
-    400040: Joint_knee_L
-    400042: Joint_knee_R
-    400044: joint_neck
-    400046: Joint_Root
-    400048: Joint_shoulder_L
-    400050: Joint_shoulder_R
-    400052: Joint_tail_01
-    400054: Joint_tail_02
-    400056: Joint_tail_03
-    400058: nullCtrl_G_hanche
-    400060: nullCtrl_hanche
-    2100000: MAT_Caisse
-    4300000: CHR_FOX_COP_MOD
-    9500000: //RootNode
-    13700000: CHR_FOX_COP_MOD
+    100000: //RootNode
+    400000: //RootNode
+    2100000: MAT_Maison_02
+    2300000: //RootNode
+    3300000: //RootNode
+    4300000: MESH_Porte_01
   externalObjects:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: MAT_Caisse
-    second: {fileID: 2100000, guid: 2401027fa91f21d4c96976e37b614d46, type: 2}
+      name: MAT_Maison_02
+    second: {fileID: 2100000, guid: 4d074b74d9cbbf0488a7fb35f511b45a, type: 2}
   materials:
     importMaterials: 1
     materialName: 0
@@ -113,7 +53,7 @@ ModelImporter:
     importCameras: 1
     importLights: 1
     swapUVChannels: 0
-    generateSecondaryUV: 0
+    generateSecondaryUV: 1
     useFileUnits: 1
     optimizeMeshForGPU: 1
     keepQuads: 0
@@ -124,15 +64,15 @@ ModelImporter:
     secondaryUVAreaDistortion: 15.000001
     secondaryUVHardAngle: 88
     secondaryUVPackMargin: 4
-    useFileScale: 1
-    previousCalculatedGlobalScale: 0.01
-    hasPreviousCalculatedGlobalScale: 1
+    useFileScale: 0
+    previousCalculatedGlobalScale: 1
+    hasPreviousCalculatedGlobalScale: 0
   tangentSpace:
     normalSmoothAngle: 60
     normalImportMode: 0
     tangentImportMode: 3
     normalCalculationMode: 4
-  importAnimation: 0
+  importAnimation: 1
   copyAvatar: 0
   humanDescription:
     serializedVersion: 2
@@ -151,7 +91,7 @@ ModelImporter:
     hasExtraRoot: 0
     skeletonHasParents: 1
   lastHumanDescriptionAvatarSource: {instanceID: 0}
-  animationType: 2
+  animationType: 0
   humanoidOversampling: 1
   additionalBone: 0
   userData: 
