@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour {
-    Rigidbody rb;
+    public Rigidbody rb;
     public Animator animator;
     [SerializeField] float accelerationFactor;
     [SerializeField] float maxSpeed;
