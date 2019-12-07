@@ -4,12 +4,23 @@ using UnityEngine;
 
 public class JumpTrigger : MonoBehaviour {
     [SerializeField] float raycastSize;
+    PlayerController player;
+    private void Start()
+    {
+        player = GetComponentInParent<PlayerController>();
+    }
+    RaycastHit hit;
+
     private void Update()
     {
-        if (Physics.Raycast(transform.position, Vector3.down, raycastSize))
+        if (player.isJumping)
         {
-            GetComponentInParent<PlayerController>().isJumping = false;
-            GetComponentInParent<PlayerController>().animator.SetBool("jump", false);
+            if (Physics.Raycast(transform.position, Vector3.down, out hit, raycastSize))
+            {
+                Debug.Log(hit.collider.name);
+                GetComponentInParent<PlayerController>().isJumping = false;
+                GetComponentInParent<PlayerController>().animator.SetTrigger("stopjump");
+            }
         }
     }
 

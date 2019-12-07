@@ -35,11 +35,12 @@ public class PlayerController : MonoBehaviour {
     {
         if (Input.GetButtonDown("Jump"))
         {
-            animator.SetBool("jump", true);
+            animator.SetTrigger("jump");
             isJumping = true;
-            rb.AddForce(Vector3.up * 100.0f);
+            GetComponentInChildren<JumpTrigger>().enabled = false;
         }
     }
+
 
     void MovePlayer()
     {
