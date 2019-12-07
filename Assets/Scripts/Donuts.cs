@@ -17,7 +17,7 @@ public class Donuts : MonoBehaviour {
     }
 	
 	void Update () {
-        transform.Rotate(Vector3.up * 2.0f);
+        transform.Rotate(Vector3.forward * 2.0f);
         if(collected)
         {
             CollectedUpdate();
@@ -31,24 +31,22 @@ public class Donuts : MonoBehaviour {
 
     void CollectedUpdate()
     {
-
-
         GetComponent<SphereCollider>().enabled = false;
-        Vector3 p = Camera.main.ViewportToWorldPoint(new Vector3(0.05f, 0.05f, 0.0f));
+   
 
         if (!isInit)
         {
-            distance = Vector3.Distance(transform.position, p);
+            distance = Vector3.Distance(transform.position, GameObject.Find("p").transform.position);
             startTime = Time.time;
             isInit = true;
         }
 
         float DistanceParcouru = ((Time.time - startTime) * speed) * Time.deltaTime;
         float time = (DistanceParcouru / distance);
-        transform.position = Vector3.Lerp(transform.position, p, time);
+        transform.position = Vector3.Lerp(transform.position, GameObject.Find("p").transform.position, time);
 
 
-        if (Vector3.Distance(transform.position, p) < 4.5f)
+        if (Vector3.Distance(transform.position, GameObject.Find("p").transform.position) < 0.5f)
         {
             donutscount++;
 
