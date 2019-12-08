@@ -462,6 +462,8 @@ MonoBehaviour:
   sensibleToJump: 0
   sensibleToHit: 0
   sensibleToProjectile: 1
+  ragdoll: {fileID: 0}
+  visual: {fileID: 0}
   agent: {fileID: 0}
   myAnimator: {fileID: 0}
 --- !u!135 &135966786868111802
@@ -491,7 +493,7 @@ SkinnedMeshRenderer:
   m_ReflectionProbeUsage: 1
   m_RenderingLayerMask: 4294967295
   m_Materials:
-  - {fileID: 2100000, guid: 7426797ab8547844997ae0017cbfb29b, type: 2}
+  - {fileID: 2100000, guid: 3f71e8084bce2a5419ba16ded95ec4e8, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
