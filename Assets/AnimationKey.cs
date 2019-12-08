@@ -61,4 +61,9 @@ public class AnimationKey : MonoBehaviour {
         Destroy(bulletInstance, 1.0f);
     }
 
+    void PlayFootstepsSound()
+    {
+        GetComponentInParent<PlayerController>().audio.PlayFootstepsSound();
+    }
+
 }

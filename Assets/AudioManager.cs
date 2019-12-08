@@ -5,6 +5,7 @@ using UnityEngine;
 public class AudioManager : MonoBehaviour {
     [SerializeField] AudioSource music;
     [SerializeField] AudioSource fx;
+    [SerializeField] AudioSource fx2;
 
     public AudioClip matraqueHit; // ok
     public AudioClip matraqueSwift; // ok
@@ -21,5 +22,10 @@ public class AudioManager : MonoBehaviour {
     public void PlayOneShot(AudioClip clip)
     {
         fx.PlayOneShot(clip);
+    }
+
+    public void PlayFootstepsSound()
+    {
+        fx2.PlayOneShot(footsteps);
     }
 }
