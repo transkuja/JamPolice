@@ -16,9 +16,4 @@ public class Bullet : MonoBehaviour {
         rb.velocity = transform.forward * bulletSpeed;
 	}
 
-    private void OnTriggerEnter(Collider other)
-    {
-        if (other.GetComponentInParent<Enemy>() == null && other.GetComponentInParent<PlayerController>() == null)
-            Destroy(gameObject);
-    }
 }

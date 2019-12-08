@@ -42,7 +42,7 @@ public class AnimationKey : MonoBehaviour {
         bulletInstance.transform.localPosition = Vector3.zero;
         bulletInstance.transform.localEulerAngles = Vector3.zero;
         bulletInstance.transform.SetParent(null);
-        Destroy(bulletInstance, 2.0f);
+        Destroy(bulletInstance, 1.0f);
     }
 
     void SpawnBulletMob()
@@ -51,7 +51,7 @@ public class AnimationKey : MonoBehaviour {
         bulletInstance.transform.localPosition = Vector3.zero;
         bulletInstance.transform.localEulerAngles = Vector3.zero;
         bulletInstance.transform.SetParent(null);
-        Destroy(bulletInstance, 2.0f);
+        Destroy(bulletInstance, 1.0f);
     }
 
 }
