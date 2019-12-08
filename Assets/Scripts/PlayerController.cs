@@ -11,7 +11,6 @@ public class PlayerController : MonoBehaviour {
     [SerializeField] float pietinementThreshold;
     [SerializeField] float jumpForce;
     public bool isJumping = false;
-    public bool isAttacking = false;
     public bool isFiring = false;
     public bool isGiraing = false;
 
@@ -39,9 +38,14 @@ public class PlayerController : MonoBehaviour {
                 animator.SetFloat("velocity", rb.velocity.magnitude);
             }
 
-            if (!isFiring)
+            if (!isFiring && !isGiraing && !isJumping)
             {
                 Taser();
+            }
+
+            if (!isGiraing)
+            {
+                ElFoxoQueGira();
             }
             MovePlayer();
         }
@@ -123,7 +127,7 @@ public class PlayerController : MonoBehaviour {
 
     void Taser()
     {
-        if (Input.GetButtonDown("Fire1"))
+        if (Input.GetButtonDown("Fire2"))
         {
             controlsLocked = true;
             animator.SetTrigger("taser");
@@ -136,6 +140,7 @@ public class PlayerController : MonoBehaviour {
         if (Input.GetButtonDown("Fire1"))
         {
             isGiraing = true;
+            animator.SetTrigger("giracomoeltopo");
         }
     }
 

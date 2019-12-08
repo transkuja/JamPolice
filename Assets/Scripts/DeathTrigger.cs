@@ -22,7 +22,7 @@ public class DeathTrigger : MonoBehaviour {
                     return;
                 }
 
-                if (player.isAttacking && GetComponent<Enemy>().sensibleToHit)
+                if (player.isGiraing && GetComponent<Enemy>().sensibleToHit)
                 {
                     GetComponent<Enemy>().Death();
                     return;
@@ -55,7 +55,7 @@ public class DeathTrigger : MonoBehaviour {
                     return;
                 }
 
-                if (player.isAttacking && GetComponent<Enemy>().sensibleToHit)
+                if (player.isGiraing && GetComponent<Enemy>().sensibleToHit)
                 {
                     GetComponent<Enemy>().Death();
                     return;
