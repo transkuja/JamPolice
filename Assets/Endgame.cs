@@ -15,6 +15,7 @@ public class Endgame : MonoBehaviour {
         {
             PlayerController playerController = FindObjectOfType<PlayerController>();
             playerController.controlsLocked = true;
+            playerController.animator.SetTrigger("win");
             GetComponent<Collider>().enabled = false;
             felicitations.SetActive(true);
 
