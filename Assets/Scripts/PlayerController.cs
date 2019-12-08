@@ -112,7 +112,7 @@ public class PlayerController : MonoBehaviour {
         }
     }
 
-    public void Death()
+    public void Death(bool _fromTaser = false)
     {
         controlsLocked = true;
         RefreshUI();
@@ -120,6 +120,8 @@ public class PlayerController : MonoBehaviour {
         ragdollInstance = GameObject.Instantiate(ragdoll);
         ragdollInstance.transform.position = transform.position;
         ragdollInstance.GetComponent<Rigidbody>().AddForce(transform.forward, ForceMode.Impulse);
+        if (_fromTaser)
+            ragdollInstance.transform.GetChild(0).GetChild(2).gameObject.SetActive(true);
         Destroy(ragdollInstance, 10.0f);
 
         audio.PlayOneShot(audio.gameover);
@@ -156,7 +158,7 @@ public class PlayerController : MonoBehaviour {
     {
         if (other.GetComponent<Bullet>() != null && other.GetComponentInParent<PlayerController>() == null)
         {
-            Death();
+            Death(true);
             StartCoroutine(DeathCotourine());
         }
     }
