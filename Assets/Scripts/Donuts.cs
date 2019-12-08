@@ -16,7 +16,7 @@ public class Donuts : MonoBehaviour {
     }
 	
 	void Update () {
-        transform.Rotate(Vector3.up * 2.0f);
+        transform.Rotate(Vector3.forward * 2.0f);
 	}
 
     private void OnTriggerEnter(Collider other)
