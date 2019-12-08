@@ -18,6 +18,7 @@ public class PlayerController : MonoBehaviour {
     public GameObject visual;
     public GameObject ragdoll;
     public GameUI uiRef;
+    public BulletSocket socket;
 
     void Start () {
         rb = GetComponent<Rigidbody>();

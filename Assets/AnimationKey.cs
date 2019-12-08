@@ -5,6 +5,7 @@ using UnityEngine;
 public class AnimationKey : MonoBehaviour {
     public GameObject taser;
     public GameObject matraque;
+    public GameObject bulletPrefab;
 
     void EnableRaycast()
     {
@@ -32,6 +33,14 @@ public class AnimationKey : MonoBehaviour {
     {
         GetComponentInParent<PlayerController>().isGiraing = false;
         matraque.SetActive(false);
+    }
+
+    void SpawnBullet()
+    {
+        GameObject bulletInstance = Instantiate(bulletPrefab, GetComponentInParent<PlayerController>().socket.transform);
+        bulletInstance.transform.localPosition = Vector3.zero;
+        bulletInstance.transform.localEulerAngles = Vector3.zero;
+        Destroy(bulletInstance, 2.0f);
     }
 
 }
