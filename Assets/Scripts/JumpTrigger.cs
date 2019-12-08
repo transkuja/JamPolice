@@ -22,13 +22,13 @@ public class JumpTrigger : MonoBehaviour {
                 player.rb.drag = 5.0f;
             }
         }
-        else
-        {
-            if (!Physics.Raycast(transform.position, Vector3.down, out hit, raycastSize * 2))
+        //else
+        //{
+            if (!Physics.Raycast(transform.position, Vector3.down, out hit, raycastSize))
             {
                 player.rb.AddForce(Vector3.down * 10.0f, ForceMode.Impulse);
             }
-        }
+        //}
 
     }
 

@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using Cinemachine;
 
 public class PlayerController : MonoBehaviour {
     public Rigidbody rb;
@@ -92,7 +91,7 @@ public class PlayerController : MonoBehaviour {
     {
         rb.isKinematic = true;
         rb.useGravity = false;
-        yield return new WaitForSeconds(3.0f);
+        yield return new WaitForSeconds(1.0f);
         if (GameData.currentCheckpoint == null)
         {
             SceneManager.LoadScene(SceneManager.GetActiveScene().name);
@@ -100,7 +99,6 @@ public class PlayerController : MonoBehaviour {
         else
         {
             transform.position = GameData.currentCheckpoint.transform.position;
-            Camera.main.GetComponent<CinemachineBrain>().ActiveVirtualCamera.Follow = transform;
             visual.SetActive(true);
             rb.isKinematic = false;
             rb.useGravity = true;
@@ -110,14 +108,13 @@ public class PlayerController : MonoBehaviour {
 
     public void Death()
     {
-        Camera.main.GetComponent<CinemachineBrain>().ActiveVirtualCamera.Follow = null;
         controlsLocked = true;
         GameData.Lives--;
         RefreshUI();
         visual.SetActive(false);
         ragdollInstance = GameObject.Instantiate(ragdoll);
         ragdollInstance.transform.position = transform.position;
-        ragdollInstance.GetComponent<Rigidbody>().AddForce(transform.forward, ForceMode.Impulse);
+        ragdollInstance.GetComponent<Rigidbody>().AddForce(transform.forward * 100.0f, ForceMode.Impulse);
         Destroy(ragdollInstance, 10.0f);
     }
 
