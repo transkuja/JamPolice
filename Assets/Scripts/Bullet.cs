@@ -15,4 +15,10 @@ public class Bullet : MonoBehaviour {
     void Update () {
         rb.velocity = transform.forward * bulletSpeed;
 	}
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.GetComponentInParent<Enemy>() == null && other.GetComponentInParent<PlayerController>() == null)
+            Destroy(gameObject);
+    }
 }

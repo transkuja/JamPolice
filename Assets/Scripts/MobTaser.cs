@@ -6,6 +6,7 @@ using UnityEngine.AI;
 public class MobTaser : Enemy {
     Animator animator;
     PlayerController player;
+    public BulletSocket socket;
 
     private void Awake()
     {

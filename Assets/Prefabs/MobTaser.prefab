@@ -372,6 +372,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4057590333851506}
   - component: {fileID: 95505804452622300}
+  - component: {fileID: 114478182835364336}
   m_Layer: 0
   m_Name: CHR_Cat_tazer_MOD
   m_TagString: Untagged
@@ -464,6 +465,22 @@ GameObject:
   - component: {fileID: 4423165667494942}
   m_Layer: 0
   m_Name: Joint_finger_L
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!1 &1945198204888512
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4199885130278772}
+  - component: {fileID: 114264620429390752}
+  m_Layer: 0
+  m_Name: Bullet Socket
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -642,6 +659,19 @@ Transform:
   m_Father: {fileID: 4483508297571310}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &4199885130278772
+Transform:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1945198204888512}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 1.22, z: 0.64}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4539291790528260}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4214043350424392
 Transform:
   m_ObjectHideFlags: 1
@@ -819,6 +849,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4057590333851506}
+  - {fileID: 4199885130278772}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1051,6 +1082,18 @@ MonoBehaviour:
   sensibleToProjectile: 0
   ragdoll: {fileID: 1041474383375396, guid: f651d3527e0f0b745bf4f2953b4b8059, type: 2}
   visual: {fileID: 1661232191958100}
+  socket: {fileID: 114264620429390752}
+--- !u!114 &114264620429390752
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1945198204888512}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e5abffc3d873bbc49af5b9e896ee5a8d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114325264974327910
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1062,6 +1105,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7bea4983916b3ec4e8dc8fde4011a044, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &114478182835364336
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1661232191958100}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 840c2ea4efd97154e96d27a00c0653d6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  taser: {fileID: 0}
+  matraque: {fileID: 0}
+  bulletPrefab: {fileID: 1222673344947704, guid: 055ab5bf4f94a61478686b13cdf198bc,
+    type: 2}
+  bulletSocket: {fileID: 114264620429390752}
 --- !u!136 &136939769989319608
 CapsuleCollider:
   m_ObjectHideFlags: 1

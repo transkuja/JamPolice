@@ -6,6 +6,7 @@ public class AnimationKey : MonoBehaviour {
     public GameObject taser;
     public GameObject matraque;
     public GameObject bulletPrefab;
+    public BulletSocket bulletSocket;
 
     void EnableRaycast()
     {
@@ -40,6 +41,15 @@ public class AnimationKey : MonoBehaviour {
         GameObject bulletInstance = Instantiate(bulletPrefab, GetComponentInParent<PlayerController>().socket.transform);
         bulletInstance.transform.localPosition = Vector3.zero;
         bulletInstance.transform.localEulerAngles = Vector3.zero;
+        Destroy(bulletInstance, 2.0f);
+    }
+
+    void SpawnBulletMob()
+    {
+        GameObject bulletInstance = Instantiate(bulletPrefab, bulletSocket.transform);
+        bulletInstance.transform.localPosition = Vector3.zero;
+        bulletInstance.transform.localEulerAngles = Vector3.zero;
+        bulletInstance.transform.SetParent(null);
         Destroy(bulletInstance, 2.0f);
     }
 

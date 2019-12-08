@@ -16,9 +16,9 @@ public class Monmouton : Enemy {
         sensibleToJump = false;
     }
 
-    private void OnCollisionEnter(Collision collision)
+    private void OnTriggerEnter(Collider other)
     {
-        if(collision.gameObject.GetComponent<Bullet>() != null)
+        if (other.GetComponent<Bullet>() != null)
         {
             sensibleToProjectile = false;
             sensibleToHit = true;
@@ -26,7 +26,6 @@ public class Monmouton : Enemy {
         }
     }
 
-   
 
     public void Update()
     {

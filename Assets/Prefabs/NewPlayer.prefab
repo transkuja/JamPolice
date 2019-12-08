@@ -607,7 +607,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4546876303933060}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4038859805609702
 Transform:
@@ -675,7 +675,7 @@ Transform:
   m_Children:
   - {fileID: 4448083762886358}
   m_Father: {fileID: 4546876303933060}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4104783072760950
 Transform:
@@ -942,8 +942,8 @@ Transform:
   m_LocalPosition: {x: -14.98, y: -2.9600003, z: 10.73}
   m_LocalScale: {x: 0.75, y: 0.75, z: 0.75}
   m_Children:
-  - {fileID: 4034986243161798}
   - {fileID: 4101316394305588}
+  - {fileID: 4034986243161798}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1283,6 +1283,7 @@ MonoBehaviour:
   matraque: {fileID: 1485026704586698}
   bulletPrefab: {fileID: 1222673344947704, guid: 055ab5bf4f94a61478686b13cdf198bc,
     type: 2}
+  bulletSocket: {fileID: 0}
 --- !u!114 &114322849065531002
 MonoBehaviour:
   m_ObjectHideFlags: 1

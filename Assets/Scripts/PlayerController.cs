@@ -144,4 +144,23 @@ public class PlayerController : MonoBehaviour {
         }
     }
 
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.GetComponent<Bullet>() != null && other.GetComponentInParent<PlayerController>() == null)
+        {
+            Death();
+            StartCoroutine(DeathCotourine());
+        }
+    }
+
+    IEnumerator DeathCotourine()
+    {
+        yield return new WaitForSeconds(1.0f);
+        GameData.Donutscount = 0;
+        GameData.currentCheckpoint = null;
+
+        GameData.Respawn();
+        Respawn();
+    }
+
 }

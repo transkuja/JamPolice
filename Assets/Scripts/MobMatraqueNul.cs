@@ -39,4 +39,12 @@ public class MobMatraqueNul : Enemy {
     {
         animator.SetTrigger("giracomoeltopo");
     }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.GetComponent<Bullet>() != null && other.GetComponentInParent<Enemy>() == null)
+        {
+            Death();
+        }
+    }
 }
