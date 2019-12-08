@@ -53,7 +53,7 @@ public class AnimationKey : MonoBehaviour {
         bulletInstance.transform.localEulerAngles = Vector3.zero;
         bulletInstance.transform.SetParent(null);
         AudioManager audio = FindObjectOfType<AudioManager>();
-        audio.PlayOneShot(GetComponentInParent<PlayerController>().audio.taserHit);
+        audio.PlayOneShot(audio.taserHit);
 
         Destroy(bulletInstance, 1.0f);
     }

@@ -1061,7 +1061,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 68755ae01f17db145aa54c961c99b142, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  raycastSize: 0.4
+  raycastSize: 0.5
 --- !u!114 &114678504713840104
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1086,8 +1086,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   myCamera: {fileID: 0}
   myPath: {fileID: 0}
-  LookAtCamera: {fileID: 0}
-  offsetDistanceCamera: 0.3
+  target: {fileID: 0}
+  offsetDistanceCamera: 0.35
   offsetDistanceLookAt: 0
   waypointA: {x: 0, y: 0, z: 0}
   waypointB: {x: 0, y: 0, z: 0}

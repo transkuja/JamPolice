@@ -603,7 +603,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1126179423896466}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.120000206, y: 1.2800001, z: 0.9199995}
+  m_LocalPosition: {x: -0.12, y: 1.28, z: 1.448}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4101316394305588}
@@ -939,14 +939,14 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1934702560455070}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -14.98, y: -2.9600003, z: 10.73}
+  m_LocalRotation: {x: -0, y: 0.99999267, z: -0, w: -0.003835621}
+  m_LocalPosition: {x: -13.99, y: -5.48, z: 12.44}
   m_LocalScale: {x: 0.75, y: 0.75, z: 0.75}
   m_Children:
   - {fileID: 4101316394305588}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 180.43999, z: 0}
 --- !u!4 &4572783706085098
 Transform:
   m_ObjectHideFlags: 1
@@ -1308,7 +1308,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   myCamera: {fileID: 0}
   myPath: {fileID: 0}
-  LookAtCamera: {fileID: 0}
+  target: {fileID: 0}
   offsetDistanceCamera: 0.3
   offsetDistanceLookAt: 0
   waypointA: {x: 0, y: 0, z: 0}

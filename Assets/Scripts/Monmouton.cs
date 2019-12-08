@@ -29,8 +29,10 @@ public class Monmouton : Enemy {
 
     public void Update()
     {
-      
-
+      if(sensibleToProjectile == false)
+        {
+           transform.position = (transform.position + ( Random.insideUnitSphere * 0.05f));
+        }
     }
 
     protected override void PlayDeathSound()

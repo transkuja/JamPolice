@@ -462,7 +462,7 @@ MonoBehaviour:
   sensibleToJump: 0
   sensibleToHit: 0
   sensibleToProjectile: 1
-  ragdoll: {fileID: 0}
+  ragdoll: {fileID: 1127089603034482, guid: f5595326d3b185f45b32079aeccebd36, type: 2}
   visual: {fileID: 1764751981132640}
   agent: {fileID: 0}
   myAnimator: {fileID: 0}

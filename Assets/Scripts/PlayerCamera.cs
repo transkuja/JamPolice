@@ -8,12 +8,11 @@ public class PlayerCamera : MonoBehaviour {
     [SerializeField]
     public CinemachineVirtualCamera myCamera;
 
-
     [SerializeField]
     public CinemachineSmoothPath myPath;
 
     [SerializeField]
-    public CinemachineDollyCart LookAtCamera;
+    public CinemachineDollyCart target;
 
     [SerializeField]
     float offsetDistanceCamera;
@@ -44,11 +43,18 @@ public class PlayerCamera : MonoBehaviour {
         Vector3 normalPath = waypointB - waypointA;
         Vector3 playerPath = transform.position - waypointA;
 
-        myCamera.GetCinemachineComponent<CinemachineTrackedDolly>().m_PathPosition = (Vector3.Dot(playerPath, normalPath)/ Mathf.Pow(normalPath.magnitude,2) + indexPath) - offsetDistanceCamera;
+        target.m_Position = (Vector3.Dot(playerPath, normalPath) / Mathf.Pow(normalPath.magnitude,2) + indexPath);
+        myCamera.GetCinemachineComponent<CinemachineTrackedDolly>().m_PathPosition = target.m_Position - offsetDistanceCamera;
+       // Debug.Log(Vector3.Dot(playerPath, normalPath) / Mathf.Pow(normalPath.magnitude, 2) + indexPath);
 
         if (myCamera.GetCinemachineComponent<CinemachineTrackedDolly>().m_PathPosition >= indexPath + 1)
         {
             UpdateWaypoint();
+        }else if(myCamera.GetCinemachineComponent<CinemachineTrackedDolly>().m_PathPosition < indexPath && indexPath != 0)
+        {
+            indexPath--;
+            waypointA = myPath.m_Waypoints[indexPath].position;
+            waypointB = myPath.m_Waypoints[indexPath + 1].position;
         }
     }
 

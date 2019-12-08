@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using Cinemachine;
 
 public class PlayerController : MonoBehaviour {
     public Rigidbody rb;
