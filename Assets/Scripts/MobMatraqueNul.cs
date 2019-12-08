@@ -49,6 +49,7 @@ public class MobMatraqueNul : Enemy {
     {
         if (other.GetComponent<Bullet>() != null && other.GetComponentInParent<Enemy>() == null)
         {
+            FxTaserHit.Play();
             Death();
         }
     }

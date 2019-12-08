@@ -22,6 +22,7 @@ public class PlayerController : MonoBehaviour {
     public BulletSocket socket;
     public AudioManager audio;
 
+    public ParticleSystem FxFoxoQueGira;
     void Start () {
         rb = GetComponent<Rigidbody>();
         animator = GetComponentInChildren<Animator>();
@@ -148,6 +149,7 @@ public class PlayerController : MonoBehaviour {
     {
         if (Input.GetButtonDown("Fire1"))
         {
+            FxFoxoQueGira.Play();
             isGiraing = true;
             audio.PlayOneShot(audio.matraqueSwift);
             animator.SetTrigger("giracomoeltopo");

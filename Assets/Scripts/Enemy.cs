@@ -11,7 +11,9 @@ public class Enemy : MonoBehaviour {
     public GameObject ragdoll;
     public GameObject visual;
     GameObject ragdollInstance;
-
+    public ParticleSystem FxHit;
+    public ParticleSystem FxTaserHit;
+    public ParticleSystem FxTaserLesMoutonsCRigolo;
     public void Death()
     {
         GetComponent<DeathTrigger>().enabled = false;

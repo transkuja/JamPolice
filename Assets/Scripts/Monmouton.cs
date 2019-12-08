@@ -20,6 +20,8 @@ public class Monmouton : Enemy {
     {
         if (other.GetComponent<Bullet>() != null)
         {
+            FxTaserHit.Play();
+            FxTaserLesMoutonsCRigolo.Play();
             sensibleToProjectile = false;
             sensibleToHit = true;
             sensibleToJump = true;
@@ -37,6 +39,7 @@ public class Monmouton : Enemy {
 
     protected override void PlayDeathSound()
     {
+        FxTaserLesMoutonsCRigolo.Stop();
         AudioManager audio = FindObjectOfType<AudioManager>();
         audio.PlayOneShot(audio.meeeeeeeeeeh);
     }
