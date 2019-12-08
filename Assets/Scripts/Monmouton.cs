@@ -33,4 +33,9 @@ public class Monmouton : Enemy {
 
     }
 
+    protected override void PlayDeathSound()
+    {
+        AudioManager audio = FindObjectOfType<AudioManager>();
+        audio.PlayOneShot(audio.meeeeeeeeeeh);
+    }
 }

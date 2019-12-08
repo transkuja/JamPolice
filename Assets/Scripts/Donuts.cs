@@ -24,6 +24,8 @@ public class Donuts : MonoBehaviour {
         if (other.GetComponentInParent<PlayerController>() != null && !collected)
         {
             collected = true;
+            other.GetComponentInParent<PlayerController>().audio.PlayOneShot(
+                other.GetComponentInParent<PlayerController>().audio.collect);
             StartCoroutine(CollectedUpdate(other.GetComponentInParent<PlayerController>()));
         }
     }

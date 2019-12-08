@@ -45,6 +45,7 @@ public class Endgame : MonoBehaviour {
             foreach (var spawnpoint in spawnPoints)
             {
                 GameObject newInstance = Instantiate(toSpawn[Random.Range(0, toSpawn.Count)], spawnpoint);
+                newInstance.transform.localPosition = Vector3.zero;
                 newInstance.transform.localEulerAngles = new Vector3(Random.Range(0, 180), Random.Range(0, 180), Random.Range(0, 180));
                 Destroy(newInstance, 5.0f);
                 yield return new WaitForSeconds(0.2f);

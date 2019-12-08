@@ -42,6 +42,7 @@ public class AnimationKey : MonoBehaviour {
         bulletInstance.transform.localPosition = Vector3.zero;
         bulletInstance.transform.localEulerAngles = Vector3.zero;
         bulletInstance.transform.SetParent(null);
+        GetComponentInParent<PlayerController>().audio.PlayOneShot(GetComponentInParent<PlayerController>().audio.taserHit);
         Destroy(bulletInstance, 1.0f);
     }
 
@@ -51,6 +52,9 @@ public class AnimationKey : MonoBehaviour {
         bulletInstance.transform.localPosition = Vector3.zero;
         bulletInstance.transform.localEulerAngles = Vector3.zero;
         bulletInstance.transform.SetParent(null);
+        AudioManager audio = FindObjectOfType<AudioManager>();
+        audio.PlayOneShot(GetComponentInParent<PlayerController>().audio.taserHit);
+
         Destroy(bulletInstance, 1.0f);
     }
 

@@ -37,7 +37,12 @@ public class MobMatraqueNul : Enemy {
 
     private void OnCollisionEnter(Collision collision)
     {
-        animator.SetTrigger("giracomoeltopo");
+        if (collision.collider.GetComponentInParent<PlayerController>() != null)
+        {
+            animator.SetTrigger("giracomoeltopo");
+            collision.collider.GetComponentInParent<PlayerController>().audio.PlayOneShot(
+                collision.collider.GetComponentInParent<PlayerController>().audio.matraqueHit);
+        }
     }
 
     private void OnTriggerEnter(Collider other)

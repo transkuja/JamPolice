@@ -13,6 +13,7 @@ public class DetectPlayer : MonoBehaviour
         {
             print("Coucou");
             mymouton.myAnimator.SetBool("Run", true);
+            other.GetComponent<PlayerController>().audio.PlayOneShot(other.GetComponent<PlayerController>().audio.meeeeeeeeeeh);
         }
     }
     private void OnTriggerStay(Collider other)

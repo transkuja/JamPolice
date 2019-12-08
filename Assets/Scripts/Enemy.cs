@@ -19,6 +19,8 @@ public class Enemy : MonoBehaviour {
         GetComponent<Collider>().enabled = false;
         if (ragdollInstance == null)
         {
+            PlayDeathSound();
+
             //StartCoroutine(EnemyDeath());
             visual.SetActive(false);
             ragdollInstance = GameObject.Instantiate(ragdoll);
@@ -29,6 +31,11 @@ public class Enemy : MonoBehaviour {
         }
     }
 
+    protected virtual void PlayDeathSound()
+    {
+        AudioManager audio = FindObjectOfType<AudioManager>();
+        audio.PlayOneShot(audio.enemyDeath);
+    }
     //IEnumerator EnemyDeath()
     //{
     //    // fx

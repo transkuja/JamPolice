@@ -19,12 +19,15 @@ public class PlayerController : MonoBehaviour {
     public GameObject ragdoll;
     public GameUI uiRef;
     public BulletSocket socket;
+    public AudioManager audio;
 
     void Start () {
         rb = GetComponent<Rigidbody>();
         animator = GetComponentInChildren<Animator>();
         if (uiRef == null)
             uiRef = FindObjectOfType<GameUI>();
+        if (audio == null)
+            audio = FindObjectOfType<AudioManager>();
 
         GameData.Reset();
         RefreshUI();
@@ -60,6 +63,7 @@ public class PlayerController : MonoBehaviour {
             isJumping = true;
             GetComponentInChildren<JumpTrigger>().enabled = false;
             rb.drag = 0.0f;
+            audio.PlayOneShot(audio.jump);
         }
     }
 
@@ -116,6 +120,8 @@ public class PlayerController : MonoBehaviour {
         ragdollInstance.transform.position = transform.position;
         ragdollInstance.GetComponent<Rigidbody>().AddForce(transform.forward, ForceMode.Impulse);
         Destroy(ragdollInstance, 10.0f);
+
+        audio.PlayOneShot(audio.gameover);
     }
 
     GameObject ragdollInstance = null;
@@ -140,6 +146,7 @@ public class PlayerController : MonoBehaviour {
         if (Input.GetButtonDown("Fire1"))
         {
             isGiraing = true;
+            audio.PlayOneShot(audio.matraqueSwift);
             animator.SetTrigger("giracomoeltopo");
         }
     }

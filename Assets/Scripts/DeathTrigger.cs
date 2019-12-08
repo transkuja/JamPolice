@@ -25,6 +25,7 @@ public class DeathTrigger : MonoBehaviour {
                 if (player.isGiraing && GetComponent<Enemy>().sensibleToHit)
                 {
                     GetComponent<Enemy>().Death();
+                    player.audio.PlayOneShot(player.audio.matraqueHit);
                     return;
                 }
 

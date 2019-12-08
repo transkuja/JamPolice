@@ -24,10 +24,11 @@ public class JumpTrigger : MonoBehaviour {
         }
         //else
         //{
-            if (!Physics.Raycast(transform.position, Vector3.down, out hit, raycastSize))
-            {
-                player.rb.AddForce(Vector3.down * 10.0f, ForceMode.Impulse);
-            }
+        if (!Physics.Raycast(transform.position, Vector3.down, out hit, raycastSize))
+        {
+            player.rb.AddForce(Vector3.down * 10.0f, ForceMode.Impulse);
+            player.audio.PlayOneShot(player.audio.fall);
+        }
         //}
 
     }
