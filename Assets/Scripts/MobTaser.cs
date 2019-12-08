@@ -19,6 +19,7 @@ public class MobTaser : Enemy {
     {
         animator = GetComponentInChildren<Animator>();
         player = FindObjectOfType<PlayerController>();
+        yield return new WaitForSeconds(Random.Range(0.0f, 2.0f));
 
         while (true)
         {
