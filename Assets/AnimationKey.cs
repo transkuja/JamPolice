@@ -52,9 +52,12 @@ public class AnimationKey : MonoBehaviour {
         bulletInstance.transform.localPosition = Vector3.zero;
         bulletInstance.transform.localEulerAngles = Vector3.zero;
         bulletInstance.transform.SetParent(null);
-        AudioManager audio = FindObjectOfType<AudioManager>();
-        audio.PlayOneShot(audio.taserHit);
-
+        PlayerController player = FindObjectOfType<PlayerController>();
+        if (Vector3.Distance(player.transform.position, bulletSocket.transform.position) < 12.5f)
+        {
+            AudioManager audio = FindObjectOfType<AudioManager>();
+            audio.PlayOneShot(audio.taserHit);
+        }
         Destroy(bulletInstance, 1.0f);
     }
 
