@@ -50,11 +50,6 @@ public class Donuts : MonoBehaviour {
 
         GameData.Donutscount++;
             
-        if (GameData.Donutscount >= 100)
-        {
-            GameData.Lives += 1;
-            GameData.Donutscount -= 100;
-        }
 
         gameObject.SetActive(false);
 

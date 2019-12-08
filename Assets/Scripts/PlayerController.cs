@@ -109,7 +109,6 @@ public class PlayerController : MonoBehaviour {
     public void Death()
     {
         controlsLocked = true;
-        GameData.Lives--;
         RefreshUI();
         visual.SetActive(false);
         ragdollInstance = GameObject.Instantiate(ragdoll);

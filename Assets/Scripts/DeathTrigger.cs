@@ -80,18 +80,11 @@ public class DeathTrigger : MonoBehaviour {
         player.Death();
 
         yield return new WaitForSeconds(1.0f);
-        if (GameData.Lives == 0)
-        {
-            GameData.Lives = 3;
-            GameData.Donutscount = 0;
-            GameData.currentCheckpoint = null;
-            SceneManager.LoadScene("Menu");
-        }
-        else
-        {
-            GameData.Respawn();
-            player.Respawn();
-        }
+        GameData.Donutscount = 0;
+        GameData.currentCheckpoint = null;
+
+        GameData.Respawn();
+        player.Respawn();
         // Fade in/out ?
         // Respawn
     }

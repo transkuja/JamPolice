@@ -5,7 +5,6 @@ using UnityEngine;
 public class GameData {
     public static bool hasImmunity = false;
     public static Checkpoint currentCheckpoint;
-    private static int lives = 3;
 
     private static int donutscount = 0;
 
@@ -21,19 +20,6 @@ public class GameData {
         set
         {
             donutscount = value;
-        }
-    }
-
-    public static int Lives
-    {
-        get
-        {
-            return lives;
-        }
-
-        set
-        {
-            lives = value;
         }
     }
 
