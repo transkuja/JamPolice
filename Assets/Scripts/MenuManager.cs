@@ -17,6 +17,8 @@ public class MenuManager : MonoBehaviour {
     [SerializeField]
     private GameObject goCredit;
 
+    public AudioClip menuButton;
+
     private void Start()
     {
         buttonPlay.onClick.AddListener(Play);
@@ -26,16 +28,19 @@ public class MenuManager : MonoBehaviour {
 
     public void Play()
     {
-       SceneManager.LoadScene(1);
+        GetComponent<AudioSource>().PlayOneShot(menuButton);
+        SceneManager.LoadScene(1);
     }
 
     public void Credit()
     {
+        GetComponent<AudioSource>().PlayOneShot(menuButton);
         goCredit.SetActive(true);
     }
 
     public void Quitter()
     {
+        GetComponent<AudioSource>().PlayOneShot(menuButton);
         Application.Quit();
     }
 }

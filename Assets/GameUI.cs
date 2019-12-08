@@ -45,14 +45,19 @@ public class GameUI : MonoBehaviour {
 
     public void ButtonResume()
     {
+        AudioManager audio = FindObjectOfType<AudioManager>();
+        audio.PlayOneShot(audio.menuButton);
         Time.timeScale = 1.0f;
         GameObject.Find("NewPlayer").GetComponent<PlayerController>().enabled = true;
         pauseMenu.SetActive(false);
         activePause = false;
+
     }
 
     public void ButtonMenu()
     {
+        AudioManager audio = FindObjectOfType<AudioManager>();
+        audio.PlayOneShot(audio.menuButton);
         Time.timeScale = 1.0f;
         SceneManager.LoadScene(0);
     }
