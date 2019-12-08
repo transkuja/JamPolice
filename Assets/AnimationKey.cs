@@ -41,6 +41,7 @@ public class AnimationKey : MonoBehaviour {
         GameObject bulletInstance = Instantiate(bulletPrefab, GetComponentInParent<PlayerController>().socket.transform);
         bulletInstance.transform.localPosition = Vector3.zero;
         bulletInstance.transform.localEulerAngles = Vector3.zero;
+        bulletInstance.transform.SetParent(null);
         Destroy(bulletInstance, 2.0f);
     }
 
