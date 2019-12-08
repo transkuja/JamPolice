@@ -463,7 +463,7 @@ MonoBehaviour:
   sensibleToHit: 0
   sensibleToProjectile: 1
   ragdoll: {fileID: 0}
-  visual: {fileID: 0}
+  visual: {fileID: 1764751981132640}
   agent: {fileID: 0}
   myAnimator: {fileID: 0}
 --- !u!135 &135966786868111802
