@@ -1060,6 +1060,8 @@ MonoBehaviour:
   sensibleToJump: 1
   sensibleToHit: 1
   sensibleToProjectile: 1
+  ragdoll: {fileID: 1014345238947156, guid: 7f3bdde4472ec79488275a5e548bd534, type: 2}
+  visual: {fileID: 1962110727890322}
 --- !u!136 &136788506995513488
 CapsuleCollider:
   m_ObjectHideFlags: 1
