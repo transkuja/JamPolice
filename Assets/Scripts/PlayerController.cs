@@ -13,6 +13,7 @@ public class PlayerController : MonoBehaviour {
     public bool isJumping = false;
     public bool isAttacking = false;
     public bool isFiring = false;
+    public bool isGiraing = false;
 
     public bool controlsLocked = false;
     public GameObject visual;
@@ -53,6 +54,7 @@ public class PlayerController : MonoBehaviour {
             animator.SetTrigger("jump");
             isJumping = true;
             GetComponentInChildren<JumpTrigger>().enabled = false;
+            rb.drag = 0.0f;
         }
     }
 
@@ -69,11 +71,11 @@ public class PlayerController : MonoBehaviour {
                 Input.GetAxisRaw("Vertical") < -0.1f)
         {
             if (rb.velocity.magnitude < pietinementThreshold)
-                rb.AddForce(transform.GetChild(0).forward * accelerationFactor);
+                rb.AddForce(transform.GetChild(0).forward * accelerationFactor / ((isJumping) ? 1.2f : 1));
             else
-                rb.velocity = transform.GetChild(0).forward * maxSpeed;
+                rb.velocity = transform.GetChild(0).forward * maxSpeed / ((isJumping) ? 1.2f : 1);
         }
-        rb.velocity = Vector3.ClampMagnitude(rb.velocity, maxSpeed);
+        rb.velocity = Vector3.ClampMagnitude(rb.velocity, maxSpeed / ((isJumping) ? 1.2f : 1));
     }
 
     public void Respawn()
@@ -126,6 +128,14 @@ public class PlayerController : MonoBehaviour {
             controlsLocked = true;
             animator.SetTrigger("taser");
             isFiring = true;
+        }
+    }
+
+    void ElFoxoQueGira()
+    {
+        if (Input.GetButtonDown("Fire1"))
+        {
+            isGiraing = true;
         }
     }
 

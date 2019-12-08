@@ -17,10 +17,19 @@ public class JumpTrigger : MonoBehaviour {
         {
             if (Physics.Raycast(transform.position, Vector3.down, out hit, raycastSize))
             {
-                GetComponentInParent<PlayerController>().isJumping = false;
-                GetComponentInParent<PlayerController>().animator.SetTrigger("stopjump");
+                player.isJumping = false;
+                player.animator.SetTrigger("stopjump");
+                player.rb.drag = 5.0f;
             }
         }
+        else
+        {
+            if (!Physics.Raycast(transform.position, Vector3.down, out hit, raycastSize * 2))
+            {
+                player.rb.AddForce(Vector3.down * 10.0f, ForceMode.Impulse);
+            }
+        }
+
     }
 
     private void OnTriggerEnter(Collider other)
