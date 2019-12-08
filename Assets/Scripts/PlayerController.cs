@@ -55,6 +55,14 @@ public class PlayerController : MonoBehaviour {
     {
         if (Input.GetButtonDown("Jump"))
         {
+            if ((Input.GetAxisRaw("Horizontal") < 0.1f &&
+                Input.GetAxisRaw("Horizontal") > -0.1f ) ||
+                (Input.GetAxisRaw("Vertical") < 0.1f &&
+                Input.GetAxisRaw("Vertical") > -0.1f))
+            {
+                Camera.main.GetComponent<CinemachineBrain>().ActiveVirtualCamera.Follow = null;
+            }
+
             animator.SetTrigger("jump");
             isJumping = true;
             GetComponentInChildren<JumpTrigger>().enabled = false;
@@ -74,6 +82,9 @@ public class PlayerController : MonoBehaviour {
                 Input.GetAxisRaw("Vertical") > 0.1f ||
                 Input.GetAxisRaw("Vertical") < -0.1f)
         {
+            if (Camera.main.GetComponent<CinemachineBrain>().ActiveVirtualCamera.Follow == null)
+                Camera.main.GetComponent<CinemachineBrain>().ActiveVirtualCamera.Follow = transform;
+
             if (rb.velocity.magnitude < pietinementThreshold)
                 rb.AddForce(transform.GetChild(0).forward * accelerationFactor / ((isJumping) ? 1.2f : 1));
             else
