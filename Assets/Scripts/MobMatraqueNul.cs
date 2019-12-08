@@ -23,7 +23,7 @@ public class MobMatraqueNul : Enemy {
 
         while (true)
         {
-            yield return new WaitForSeconds(Random.Range(3.0f, 6.0f));
+            yield return new WaitForSeconds(3.0f);
             if (agent.isActiveAndEnabled)
                 agent.SetDestination(initPosition + Random.insideUnitSphere * 5);
         }
